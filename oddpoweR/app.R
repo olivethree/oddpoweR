@@ -64,8 +64,8 @@ ui <- fluidPage(
       ),
       
       actionButton("calculate", "Determine Sample Size")
-     
       
+     
     ),
     mainPanel(
       fluidRow(
@@ -85,8 +85,9 @@ ui <- fluidPage(
       br(),
       plotOutput("powercurve_plot"),
       br(),
-      markdown("**Output**"),
-      markdown("Timestamped results will be saved to disk (csv and rds)."),
+      markdown("**Save results?**"),
+      downloadButton('downloadData', 'Download timestamped results (.csv)'),
+      br(),
       br(),
       markdown("**Citation**"),
       tags$div(HTML("<p>Oliveira, M. (2023). oddpoweR: Power analysis for generalized linear mixed-effects models. R Shiny application (Version 0.1), <a href='http://olivethree.shinyapps.io/oddpoweR'>http://olivethree.shinyapps.io/oddpoweR</a></p>")),
@@ -213,15 +214,11 @@ server <- function(input, output, session) {
       }
       
       # Add more info to results
-      sim_results <- sim_results %>% 
+      sim_results <- sim_results %>%
         mutate(nr_stimuli = input$ntrials,
                timestamp = Sys.time(),
                power_for = "two_way_interaction",
                design = "2w * 2w + (1|subject) + (1|trials)")
-      
-      # Save data to local folder
-      saveRDS(sim_results, "pwr_sim_2w2w.rds")
-      write.csv(sim_results, "pwr_sim_2w2w.csv")
       
     }
     
@@ -318,18 +315,14 @@ server <- function(input, output, session) {
       } 
       
       # Add more info to results
-      sim_results <- sim_results %>% 
+      sim_results <- sim_results %>%
         mutate(nr_stimuli = input$ntrials,
                timestamp = Sys.time(),
                power_for = "three_way_interaction",
                design = "2w * 2w * 2w + (1|subject) + (1|trials)")
-      
-      # Save data to local folder
-      saveRDS(sim_results, "pwr_sim_2w2w2w.rds")
-      write.csv(sim_results, "pwr_sim_2w2w2w.csv")
     }
     
-    
+
     # pcurve_results <- powerCurve(fitted.model, 
     #                              test=fcompare(y ~ pred_A + pred_B),
     #                              along="id",
@@ -337,6 +330,27 @@ server <- function(input, output, session) {
     #                              seed = 42)
     # 
     # sim_results <- summary(pcurve_results) %>% mutate(sample_size = nr_subjects)
+    
+    # Download results
+    if(input$select_input == "2w * 2w + (1|subject) + (1|trial)") {
+      output$downloadData <- downloadHandler(
+        filename = function() { 
+          paste("power_results_2w2w_", Sys.Date(), ".csv", sep="")
+        },
+        content = function(file) {
+          write.csv(sim_results, file)
+        })
+    }
+    
+    if(input$select_input == "2w * 2w * 2w + (1|subject) + (1|trial)") {
+      output$downloadData <- downloadHandler(
+        filename = function() { 
+          paste("power_results_2w2w2w_", Sys.Date(), ".csv", sep="")
+        },
+        content = function(file) {
+          write.csv(sim_results, file)
+        })
+    }
     
     # Display results table
     output$result <- renderPrint({
