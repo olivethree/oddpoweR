@@ -1,11 +1,5 @@
 # oddpoweR: Power analysis for generalized linear mixed-effects models
 
-**Shiny app**: <https://olivethree.shinyapps.io/oddpoweR/>
-
-**Citation:**
-
--   Oliveira, M. (2023). oddpoweR: Power analysis for generalized linear mixed-effects models. R Shiny application (Version 0.1), <https://olivethree.shinyapps.io/oddpoweR>
-
 ## Overview
 
 You can use this shiny app to compute simple generalized linear mixed-effects models with binomial or count data as the response variable.
@@ -22,14 +16,20 @@ You can use this shiny app to compute simple generalized linear mixed-effects mo
 
 -   You get a plot of the power curve along with the recommended sample size (subjects) based on a reliable criterion for the estimated power (i.e. lower bound of the 95% CI for power estimated at a given sample size).
 
+## **Shiny app**
+
+<https://olivethree.shinyapps.io/oddpoweR/>
+
+## **Citation**
+
+-   Oliveira, M. (2023). oddpoweR: Power analysis for generalized linear mixed-effects models. R Shiny application (Version 0.1), <https://olivethree.shinyapps.io/oddpoweR>
+
 ## About me
 
-Manuel Oliveira
+[Manuel Oliveira](https://manueloliveira.nl/)
 
 (a.k.a. Manuel Barbosa de Oliveira)
 
 Statistics \| Data Science \| Social Cognition \| Face Perception \| Psychology of AI
-
-Twitter: @manueljbo
 
 [Google Scholar Page](https://scholar.google.pt/citations?user=8BGdMv8AAAAJ&hl=en)
