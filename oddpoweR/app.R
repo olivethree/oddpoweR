@@ -89,10 +89,14 @@ ui <- fluidPage(
       downloadButton('downloadData', 'Download timestamped results (.csv)'),
       br(),
       br(),
+      markdown("**Credits**"),
+      markdown("This app has a strong dependency on the 'simr' R package (Green & MacLeod, 2016) and is meant to facilitate its use by a wider audience."),
+      br(),
       markdown("**Citation**"),
       tags$div(HTML("<p>Oliveira, M. (2023). oddpoweR: Power analysis for generalized linear mixed-effects models. R Shiny application (Version 0.1), <a href='http://olivethree.shinyapps.io/oddpoweR'>http://olivethree.shinyapps.io/oddpoweR</a></p>")),
       markdown("**References**"),
-      p("Chen, H., Cohen, P., & Chen, S. (2010). How big is a big odds ratio? Interpreting the magnitudes of odds ratios in epidemiological studies. Communications in Statistics — Simulation and Computation, 39(4), 860-864.")
+      markdown("Chen, H., Cohen, P., & Chen, S. (2010). How big is a big odds ratio? Interpreting the magnitudes of odds ratios in epidemiological studies. *Communications in Statistics — Simulation and Computation*, *39*(4), 860-864."),
+      markdown("Green, P., & MacLeod, C. J. (2016). SIMR: An R package for power analysis of generalized linear mixed models by simulation. *Methods in Ecology and Evolution*, *7*(4), 493-498.")
     )
   )
 )
