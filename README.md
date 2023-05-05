@@ -6,7 +6,7 @@
 
 **Citation:**
 
--   Oliveira, M. (2023). Shiny Reverse Correlation: Sampling for subgroup CI generation. R Shiny application (Version 0.1), <http://olivethree.shinyapps.io/shinyRC_subgroup_cis>
+-   Oliveira, M. (2023). oddpoweR: Power analysis for generalized linear mixed-effects models. R Shiny application (Version 0.1), <https://olivethree.shinyapps.io/oddpoweR>
 
 ## Overview
 
