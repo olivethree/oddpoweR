@@ -1,5 +1,3 @@
-# oddpoweR
-
 # oddpoweR: Power analysis for generalized linear mixed-effects models
 
 **Shiny app**: <https://olivethree.shinyapps.io/oddpoweR/>
