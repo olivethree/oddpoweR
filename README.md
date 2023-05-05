@@ -18,7 +18,7 @@ You can use this shiny app to compute simple generalized linear mixed-effects mo
 
 -   You can specify the overall model intercept and the variability for the random effect terms (subject and trials).
 
--   You get a CSV and a RDS file with a time stamped table of the results, so you can share as open science materials (for example, as supporting materials for a preregistration).
+-   You get a CSV file with a time stamped table of the results, so you can share as open science materials (for example, as supporting materials for a preregistration).
 
 -   You get a plot of the power curve along with the recommended sample size (subjects) based on a reliable criterion for the estimated power (i.e. lower bound of the 95% CI for power estimated at a given sample size).
 
